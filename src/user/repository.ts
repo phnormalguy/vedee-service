@@ -38,10 +38,23 @@ export const userRepository = {
                 }
             })
  
-            return user
+            return {data:user}
 
         }
         return {message:"body is required",success : false}
 
+    },
+    getOne:async (id:string)=>{
+        const user = await db.mUser.findUnique({
+            where:{
+                id : id
+            }
+            
+        })
+        if(!user){
+            return {message:"not found this user",success:false}
+            }
+        return  {data:user}
     }
+
 }

@@ -5,19 +5,19 @@ import { userRepository } from "./repository";
 class UserService {
     constructor(private userRepository: any) {}
 
-    // async getUserById(id: string) {
-    //     try {
-    //         const user = await this.userRepository.findById(id);
-    //         return ServiceHandler.SUCCESS
-    //     } catch (error) {
-    //         return ServiceHandler.FAIL
-    //     }
-    // }
+    async getOne(id: string) {
+        try {
+            const user = await this.userRepository.getOne(id);
+            return ServiceHandler.SUCCESS(user.success,user.data,user.message)
+        } catch (error) { 
+            return ServiceHandler.FAIL
+        }
+    }
 
     async createUser(body: User) {
         try {
-            const res = await this.userRepository.create(body);
-            return ServiceHandler.SUCCESS(res.success,null,res.message)
+            const user = await this.userRepository.create(body);
+            return ServiceHandler.SUCCESS(user.success,user.data,user.message)
         } catch (error) {
             return ServiceHandler.FAIL
 
