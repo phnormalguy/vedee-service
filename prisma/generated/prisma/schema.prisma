@@ -1,0 +1,51 @@
+model tLike {
+  id      Int    @id @default(autoincrement())
+  user_id String
+  user    mUser  @relation(fields: [user_id], references: [id])
+  post_id Int
+  post    mPost  @relation(fields: [post_id], references: [id])
+
+  @@unique([user_id, post_id])
+}
+
+model mPost {
+  id         Int     @id @unique @default(autoincrement())
+  url        String
+  title      String?
+  post_ower  String
+  like_num   Int     @default(0)
+  post_owner String
+  mUser      mUser   @relation(fields: [post_owner], references: [id])
+  likes      tLike[]
+}
+
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../generated/prisma"
+  previewFeatures = ["prismaSchemaFolder"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model mUser {
+  id            String  @id @default(cuid())
+  username      String  @unique
+  password      String
+  email         String
+  display_name  String
+  num_follower  Int     @default(0)
+  folower_id    Json
+  num_following Int     @default(0)
+  follwing_id   Json
+  user_post     mPost[]
+  likes         tLike[]
+}

@@ -1,0 +1,15 @@
+model mUser {
+    id String @id @default(cuid())
+    username String @unique
+    password String
+    email String
+    display_name String 
+    num_follower Int @default(0)
+    folower_id Json
+    num_following Int @default(0)
+    follwing_id Json
+    user_post mPost[]
+    likes tLike[]
+ 
+    
+}

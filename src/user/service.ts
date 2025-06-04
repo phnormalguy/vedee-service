@@ -1,0 +1,31 @@
+import { ServiceHandler } from "../../utils/service_response";
+import type { User } from "./model";
+import { userRepository } from "./repository";
+
+class UserService {
+    constructor(private userRepository: any) {}
+
+    // async getUserById(id: string) {
+    //     try {
+    //         const user = await this.userRepository.findById(id);
+    //         return ServiceHandler.SUCCESS
+    //     } catch (error) {
+    //         return ServiceHandler.FAIL
+    //     }
+    // }
+
+    async createUser(body: User) {
+        try {
+            const res = await this.userRepository.create(body);
+            return ServiceHandler.SUCCESS(res.success,null,res.message)
+        } catch (error) {
+            return ServiceHandler.FAIL
+
+        } 
+    }
+
+  
+}
+
+
+export const userService = new UserService(userRepository)

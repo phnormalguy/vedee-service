@@ -1,0 +1,11 @@
+model mPost {
+    id Int @id @unique @default(autoincrement())
+    url String
+    title String?
+    post_ower String
+    like_num Int @default(0)
+    post_owner String
+    mUser      mUser   @relation(fields: [post_owner], references: [id]) 
+    likes tLike[]
+}
+
