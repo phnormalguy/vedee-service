@@ -7,5 +7,7 @@ model mPost {
     post_owner String
     mUser      mUser   @relation(fields: [post_owner], references: [id]) 
     likes tLike[]
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now())
 }
 

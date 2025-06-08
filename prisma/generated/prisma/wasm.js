@@ -123,7 +123,9 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 exports.Prisma.TLikeScalarFieldEnum = {
   id: 'id',
   user_id: 'user_id',
-  post_id: 'post_id'
+  post_id: 'post_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.MPostScalarFieldEnum = {
@@ -144,7 +146,9 @@ exports.Prisma.MUserScalarFieldEnum = {
   num_follower: 'num_follower',
   folower_id: 'folower_id',
   num_following: 'num_following',
-  follwing_id: 'follwing_id'
+  follwing_id: 'follwing_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.SortOrder = {

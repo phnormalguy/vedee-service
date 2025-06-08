@@ -1,4 +1,4 @@
-type ServiceResponse<T = any> = {
+export type ServiceResponse<T = any> = {
   data?: T;
   message: string;
   status_code: number | string;

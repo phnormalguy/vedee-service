@@ -10,6 +10,8 @@ model mUser {
     follwing_id Json
     user_post mPost[]
     likes tLike[]
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now())
  
     
 }

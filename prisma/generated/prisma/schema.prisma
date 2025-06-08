@@ -5,6 +5,9 @@ model tLike {
   post_id Int
   post    mPost  @relation(fields: [post_id], references: [id])
 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
   @@unique([user_id, post_id])
 }
 
@@ -37,15 +40,17 @@ datasource db {
 }
 
 model mUser {
-  id            String  @id @default(cuid())
-  username      String  @unique
+  id            String   @id @default(cuid())
+  username      String   @unique
   password      String
   email         String
   display_name  String
-  num_follower  Int     @default(0)
+  num_follower  Int      @default(0)
   folower_id    Json
-  num_following Int     @default(0)
+  num_following Int      @default(0)
   follwing_id   Json
   user_post     mPost[]
   likes         tLike[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @default(now())
 }

@@ -8,6 +8,9 @@ model tLike {
 
     @@unique([user_id,post_id])
 
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now())
+
 
 
 }

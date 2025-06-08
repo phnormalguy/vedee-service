@@ -1147,18 +1147,24 @@ export namespace Prisma {
     id: number | null
     user_id: string | null
     post_id: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type TLikeMaxAggregateOutputType = {
     id: number | null
     user_id: string | null
     post_id: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type TLikeCountAggregateOutputType = {
     id: number
     user_id: number
     post_id: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -1177,18 +1183,24 @@ export namespace Prisma {
     id?: true
     user_id?: true
     post_id?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type TLikeMaxAggregateInputType = {
     id?: true
     user_id?: true
     post_id?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type TLikeCountAggregateInputType = {
     id?: true
     user_id?: true
     post_id?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -1282,6 +1294,8 @@ export namespace Prisma {
     id: number
     user_id: string
     post_id: number
+    createdAt: Date
+    updatedAt: Date
     _count: TLikeCountAggregateOutputType | null
     _avg: TLikeAvgAggregateOutputType | null
     _sum: TLikeSumAggregateOutputType | null
@@ -1307,6 +1321,8 @@ export namespace Prisma {
     id?: boolean
     user_id?: boolean
     post_id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     user?: boolean | mUserDefaultArgs<ExtArgs>
     post?: boolean | mPostDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["tLike"]>
@@ -1315,6 +1331,8 @@ export namespace Prisma {
     id?: boolean
     user_id?: boolean
     post_id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     user?: boolean | mUserDefaultArgs<ExtArgs>
     post?: boolean | mPostDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["tLike"]>
@@ -1323,6 +1341,8 @@ export namespace Prisma {
     id?: boolean
     user_id?: boolean
     post_id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     user?: boolean | mUserDefaultArgs<ExtArgs>
     post?: boolean | mPostDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["tLike"]>
@@ -1331,9 +1351,11 @@ export namespace Prisma {
     id?: boolean
     user_id?: boolean
     post_id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type tLikeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "post_id", ExtArgs["result"]["tLike"]>
+  export type tLikeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "post_id" | "createdAt" | "updatedAt", ExtArgs["result"]["tLike"]>
   export type tLikeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | mUserDefaultArgs<ExtArgs>
     post?: boolean | mPostDefaultArgs<ExtArgs>
@@ -1357,6 +1379,8 @@ export namespace Prisma {
       id: number
       user_id: string
       post_id: number
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["tLike"]>
     composites: {}
   }
@@ -1785,6 +1809,8 @@ export namespace Prisma {
     readonly id: FieldRef<"tLike", 'Int'>
     readonly user_id: FieldRef<"tLike", 'String'>
     readonly post_id: FieldRef<"tLike", 'Int'>
+    readonly createdAt: FieldRef<"tLike", 'DateTime'>
+    readonly updatedAt: FieldRef<"tLike", 'DateTime'>
   }
     
 
@@ -3368,6 +3394,8 @@ export namespace Prisma {
     display_name: string | null
     num_follower: number | null
     num_following: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type MUserMaxAggregateOutputType = {
@@ -3378,6 +3406,8 @@ export namespace Prisma {
     display_name: string | null
     num_follower: number | null
     num_following: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type MUserCountAggregateOutputType = {
@@ -3390,6 +3420,8 @@ export namespace Prisma {
     folower_id: number
     num_following: number
     follwing_id: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -3412,6 +3444,8 @@ export namespace Prisma {
     display_name?: true
     num_follower?: true
     num_following?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type MUserMaxAggregateInputType = {
@@ -3422,6 +3456,8 @@ export namespace Prisma {
     display_name?: true
     num_follower?: true
     num_following?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type MUserCountAggregateInputType = {
@@ -3434,6 +3470,8 @@ export namespace Prisma {
     folower_id?: true
     num_following?: true
     follwing_id?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -3533,6 +3571,8 @@ export namespace Prisma {
     folower_id: JsonValue
     num_following: number
     follwing_id: JsonValue
+    createdAt: Date
+    updatedAt: Date
     _count: MUserCountAggregateOutputType | null
     _avg: MUserAvgAggregateOutputType | null
     _sum: MUserSumAggregateOutputType | null
@@ -3564,6 +3604,8 @@ export namespace Prisma {
     folower_id?: boolean
     num_following?: boolean
     follwing_id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     user_post?: boolean | mUser$user_postArgs<ExtArgs>
     likes?: boolean | mUser$likesArgs<ExtArgs>
     _count?: boolean | MUserCountOutputTypeDefaultArgs<ExtArgs>
@@ -3579,6 +3621,8 @@ export namespace Prisma {
     folower_id?: boolean
     num_following?: boolean
     follwing_id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }, ExtArgs["result"]["mUser"]>
 
   export type mUserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -3591,6 +3635,8 @@ export namespace Prisma {
     folower_id?: boolean
     num_following?: boolean
     follwing_id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }, ExtArgs["result"]["mUser"]>
 
   export type mUserSelectScalar = {
@@ -3603,9 +3649,11 @@ export namespace Prisma {
     folower_id?: boolean
     num_following?: boolean
     follwing_id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type mUserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "username" | "password" | "email" | "display_name" | "num_follower" | "folower_id" | "num_following" | "follwing_id", ExtArgs["result"]["mUser"]>
+  export type mUserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "username" | "password" | "email" | "display_name" | "num_follower" | "folower_id" | "num_following" | "follwing_id" | "createdAt" | "updatedAt", ExtArgs["result"]["mUser"]>
   export type mUserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user_post?: boolean | mUser$user_postArgs<ExtArgs>
     likes?: boolean | mUser$likesArgs<ExtArgs>
@@ -3630,6 +3678,8 @@ export namespace Prisma {
       folower_id: Prisma.JsonValue
       num_following: number
       follwing_id: Prisma.JsonValue
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["mUser"]>
     composites: {}
   }
@@ -4064,6 +4114,8 @@ export namespace Prisma {
     readonly folower_id: FieldRef<"mUser", 'Json'>
     readonly num_following: FieldRef<"mUser", 'Int'>
     readonly follwing_id: FieldRef<"mUser", 'Json'>
+    readonly createdAt: FieldRef<"mUser", 'DateTime'>
+    readonly updatedAt: FieldRef<"mUser", 'DateTime'>
   }
     
 
@@ -4535,7 +4587,9 @@ export namespace Prisma {
   export const TLikeScalarFieldEnum: {
     id: 'id',
     user_id: 'user_id',
-    post_id: 'post_id'
+    post_id: 'post_id',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type TLikeScalarFieldEnum = (typeof TLikeScalarFieldEnum)[keyof typeof TLikeScalarFieldEnum]
@@ -4562,7 +4616,9 @@ export namespace Prisma {
     num_follower: 'num_follower',
     folower_id: 'folower_id',
     num_following: 'num_following',
-    follwing_id: 'follwing_id'
+    follwing_id: 'follwing_id',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type MUserScalarFieldEnum = (typeof MUserScalarFieldEnum)[keyof typeof MUserScalarFieldEnum]
@@ -4642,6 +4698,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'DateTime'
+   */
+  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+  /**
+   * Reference to a field of type 'DateTime[]'
+   */
+  export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Json'
    */
   export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
@@ -4679,6 +4749,8 @@ export namespace Prisma {
     id?: IntFilter<"tLike"> | number
     user_id?: StringFilter<"tLike"> | string
     post_id?: IntFilter<"tLike"> | number
+    createdAt?: DateTimeFilter<"tLike"> | Date | string
+    updatedAt?: DateTimeFilter<"tLike"> | Date | string
     user?: XOR<MUserScalarRelationFilter, mUserWhereInput>
     post?: XOR<MPostScalarRelationFilter, mPostWhereInput>
   }
@@ -4687,6 +4759,8 @@ export namespace Prisma {
     id?: SortOrder
     user_id?: SortOrder
     post_id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     user?: mUserOrderByWithRelationInput
     post?: mPostOrderByWithRelationInput
   }
@@ -4699,6 +4773,8 @@ export namespace Prisma {
     NOT?: tLikeWhereInput | tLikeWhereInput[]
     user_id?: StringFilter<"tLike"> | string
     post_id?: IntFilter<"tLike"> | number
+    createdAt?: DateTimeFilter<"tLike"> | Date | string
+    updatedAt?: DateTimeFilter<"tLike"> | Date | string
     user?: XOR<MUserScalarRelationFilter, mUserWhereInput>
     post?: XOR<MPostScalarRelationFilter, mPostWhereInput>
   }, "id" | "user_id_post_id">
@@ -4707,6 +4783,8 @@ export namespace Prisma {
     id?: SortOrder
     user_id?: SortOrder
     post_id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: tLikeCountOrderByAggregateInput
     _avg?: tLikeAvgOrderByAggregateInput
     _max?: tLikeMaxOrderByAggregateInput
@@ -4721,6 +4799,8 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"tLike"> | number
     user_id?: StringWithAggregatesFilter<"tLike"> | string
     post_id?: IntWithAggregatesFilter<"tLike"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"tLike"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"tLike"> | Date | string
   }
 
   export type mPostWhereInput = {
@@ -4801,6 +4881,8 @@ export namespace Prisma {
     folower_id?: JsonFilter<"mUser">
     num_following?: IntFilter<"mUser"> | number
     follwing_id?: JsonFilter<"mUser">
+    createdAt?: DateTimeFilter<"mUser"> | Date | string
+    updatedAt?: DateTimeFilter<"mUser"> | Date | string
     user_post?: MPostListRelationFilter
     likes?: TLikeListRelationFilter
   }
@@ -4815,6 +4897,8 @@ export namespace Prisma {
     folower_id?: SortOrder
     num_following?: SortOrder
     follwing_id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     user_post?: mPostOrderByRelationAggregateInput
     likes?: tLikeOrderByRelationAggregateInput
   }
@@ -4832,6 +4916,8 @@ export namespace Prisma {
     folower_id?: JsonFilter<"mUser">
     num_following?: IntFilter<"mUser"> | number
     follwing_id?: JsonFilter<"mUser">
+    createdAt?: DateTimeFilter<"mUser"> | Date | string
+    updatedAt?: DateTimeFilter<"mUser"> | Date | string
     user_post?: MPostListRelationFilter
     likes?: TLikeListRelationFilter
   }, "id" | "username">
@@ -4846,6 +4932,8 @@ export namespace Prisma {
     folower_id?: SortOrder
     num_following?: SortOrder
     follwing_id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: mUserCountOrderByAggregateInput
     _avg?: mUserAvgOrderByAggregateInput
     _max?: mUserMaxOrderByAggregateInput
@@ -4866,9 +4954,13 @@ export namespace Prisma {
     folower_id?: JsonWithAggregatesFilter<"mUser">
     num_following?: IntWithAggregatesFilter<"mUser"> | number
     follwing_id?: JsonWithAggregatesFilter<"mUser">
+    createdAt?: DateTimeWithAggregatesFilter<"mUser"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"mUser"> | Date | string
   }
 
   export type tLikeCreateInput = {
+    createdAt?: Date | string
+    updatedAt?: Date | string
     user: mUserCreateNestedOneWithoutLikesInput
     post: mPostCreateNestedOneWithoutLikesInput
   }
@@ -4877,9 +4969,13 @@ export namespace Prisma {
     id?: number
     user_id: string
     post_id: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type tLikeUpdateInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: mUserUpdateOneRequiredWithoutLikesNestedInput
     post?: mPostUpdateOneRequiredWithoutLikesNestedInput
   }
@@ -4888,22 +4984,29 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: StringFieldUpdateOperationsInput | string
     post_id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type tLikeCreateManyInput = {
     id?: number
     user_id: string
     post_id: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type tLikeUpdateManyMutationInput = {
-
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type tLikeUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: StringFieldUpdateOperationsInput | string
     post_id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type mPostCreateInput = {
@@ -4979,6 +5082,8 @@ export namespace Prisma {
     folower_id: JsonNullValueInput | InputJsonValue
     num_following?: number
     follwing_id: JsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
     user_post?: mPostCreateNestedManyWithoutMUserInput
     likes?: tLikeCreateNestedManyWithoutUserInput
   }
@@ -4993,6 +5098,8 @@ export namespace Prisma {
     folower_id: JsonNullValueInput | InputJsonValue
     num_following?: number
     follwing_id: JsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
     user_post?: mPostUncheckedCreateNestedManyWithoutMUserInput
     likes?: tLikeUncheckedCreateNestedManyWithoutUserInput
   }
@@ -5007,6 +5114,8 @@ export namespace Prisma {
     folower_id?: JsonNullValueInput | InputJsonValue
     num_following?: IntFieldUpdateOperationsInput | number
     follwing_id?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user_post?: mPostUpdateManyWithoutMUserNestedInput
     likes?: tLikeUpdateManyWithoutUserNestedInput
   }
@@ -5021,6 +5130,8 @@ export namespace Prisma {
     folower_id?: JsonNullValueInput | InputJsonValue
     num_following?: IntFieldUpdateOperationsInput | number
     follwing_id?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user_post?: mPostUncheckedUpdateManyWithoutMUserNestedInput
     likes?: tLikeUncheckedUpdateManyWithoutUserNestedInput
   }
@@ -5035,6 +5146,8 @@ export namespace Prisma {
     folower_id: JsonNullValueInput | InputJsonValue
     num_following?: number
     follwing_id: JsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type mUserUpdateManyMutationInput = {
@@ -5047,6 +5160,8 @@ export namespace Prisma {
     folower_id?: JsonNullValueInput | InputJsonValue
     num_following?: IntFieldUpdateOperationsInput | number
     follwing_id?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type mUserUncheckedUpdateManyInput = {
@@ -5059,6 +5174,8 @@ export namespace Prisma {
     folower_id?: JsonNullValueInput | InputJsonValue
     num_following?: IntFieldUpdateOperationsInput | number
     follwing_id?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -5087,6 +5204,17 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
   export type MUserScalarRelationFilter = {
     is?: mUserWhereInput
     isNot?: mUserWhereInput
@@ -5106,6 +5234,8 @@ export namespace Prisma {
     id?: SortOrder
     user_id?: SortOrder
     post_id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type tLikeAvgOrderByAggregateInput = {
@@ -5117,12 +5247,16 @@ export namespace Prisma {
     id?: SortOrder
     user_id?: SortOrder
     post_id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type tLikeMinOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
     post_id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type tLikeSumOrderByAggregateInput = {
@@ -5162,6 +5296,20 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type StringNullableFilter<$PrismaModel = never> = {
@@ -5292,6 +5440,8 @@ export namespace Prisma {
     folower_id?: SortOrder
     num_following?: SortOrder
     follwing_id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type mUserAvgOrderByAggregateInput = {
@@ -5307,6 +5457,8 @@ export namespace Prisma {
     display_name?: SortOrder
     num_follower?: SortOrder
     num_following?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type mUserMinOrderByAggregateInput = {
@@ -5317,6 +5469,8 @@ export namespace Prisma {
     display_name?: SortOrder
     num_follower?: SortOrder
     num_following?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type mUserSumOrderByAggregateInput = {
@@ -5360,6 +5514,10 @@ export namespace Prisma {
     create?: XOR<mPostCreateWithoutLikesInput, mPostUncheckedCreateWithoutLikesInput>
     connectOrCreate?: mPostCreateOrConnectWithoutLikesInput
     connect?: mPostWhereUniqueInput
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
   }
 
   export type mUserUpdateOneRequiredWithoutLikesNestedInput = {
@@ -5559,6 +5717,17 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -5601,6 +5770,20 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type NestedStringNullableFilter<$PrismaModel = never> = {
@@ -5678,6 +5861,8 @@ export namespace Prisma {
     folower_id: JsonNullValueInput | InputJsonValue
     num_following?: number
     follwing_id: JsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
     user_post?: mPostCreateNestedManyWithoutMUserInput
   }
 
@@ -5691,6 +5876,8 @@ export namespace Prisma {
     folower_id: JsonNullValueInput | InputJsonValue
     num_following?: number
     follwing_id: JsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
     user_post?: mPostUncheckedCreateNestedManyWithoutMUserInput
   }
 
@@ -5742,6 +5929,8 @@ export namespace Prisma {
     folower_id?: JsonNullValueInput | InputJsonValue
     num_following?: IntFieldUpdateOperationsInput | number
     follwing_id?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user_post?: mPostUpdateManyWithoutMUserNestedInput
   }
 
@@ -5755,6 +5944,8 @@ export namespace Prisma {
     folower_id?: JsonNullValueInput | InputJsonValue
     num_following?: IntFieldUpdateOperationsInput | number
     follwing_id?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user_post?: mPostUncheckedUpdateManyWithoutMUserNestedInput
   }
 
@@ -5796,6 +5987,8 @@ export namespace Prisma {
     folower_id: JsonNullValueInput | InputJsonValue
     num_following?: number
     follwing_id: JsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
     likes?: tLikeCreateNestedManyWithoutUserInput
   }
 
@@ -5809,6 +6002,8 @@ export namespace Prisma {
     folower_id: JsonNullValueInput | InputJsonValue
     num_following?: number
     follwing_id: JsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
     likes?: tLikeUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -5818,12 +6013,16 @@ export namespace Prisma {
   }
 
   export type tLikeCreateWithoutPostInput = {
+    createdAt?: Date | string
+    updatedAt?: Date | string
     user: mUserCreateNestedOneWithoutLikesInput
   }
 
   export type tLikeUncheckedCreateWithoutPostInput = {
     id?: number
     user_id: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type tLikeCreateOrConnectWithoutPostInput = {
@@ -5857,6 +6056,8 @@ export namespace Prisma {
     folower_id?: JsonNullValueInput | InputJsonValue
     num_following?: IntFieldUpdateOperationsInput | number
     follwing_id?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     likes?: tLikeUpdateManyWithoutUserNestedInput
   }
 
@@ -5870,6 +6071,8 @@ export namespace Prisma {
     folower_id?: JsonNullValueInput | InputJsonValue
     num_following?: IntFieldUpdateOperationsInput | number
     follwing_id?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     likes?: tLikeUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -5896,6 +6099,8 @@ export namespace Prisma {
     id?: IntFilter<"tLike"> | number
     user_id?: StringFilter<"tLike"> | string
     post_id?: IntFilter<"tLike"> | number
+    createdAt?: DateTimeFilter<"tLike"> | Date | string
+    updatedAt?: DateTimeFilter<"tLike"> | Date | string
   }
 
   export type mPostCreateWithoutMUserInput = {
@@ -5926,12 +6131,16 @@ export namespace Prisma {
   }
 
   export type tLikeCreateWithoutUserInput = {
+    createdAt?: Date | string
+    updatedAt?: Date | string
     post: mPostCreateNestedOneWithoutLikesInput
   }
 
   export type tLikeUncheckedCreateWithoutUserInput = {
     id?: number
     post_id: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type tLikeCreateOrConnectWithoutUserInput = {
@@ -5991,20 +6200,28 @@ export namespace Prisma {
   export type tLikeCreateManyPostInput = {
     id?: number
     user_id: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type tLikeUpdateWithoutPostInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: mUserUpdateOneRequiredWithoutLikesNestedInput
   }
 
   export type tLikeUncheckedUpdateWithoutPostInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type tLikeUncheckedUpdateManyWithoutPostInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type mPostCreateManyMUserInput = {
@@ -6018,6 +6235,8 @@ export namespace Prisma {
   export type tLikeCreateManyUserInput = {
     id?: number
     post_id: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type mPostUpdateWithoutMUserInput = {
@@ -6046,17 +6265,23 @@ export namespace Prisma {
   }
 
   export type tLikeUpdateWithoutUserInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     post?: mPostUpdateOneRequiredWithoutLikesNestedInput
   }
 
   export type tLikeUncheckedUpdateWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     post_id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type tLikeUncheckedUpdateManyWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     post_id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 
