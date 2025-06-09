@@ -2254,6 +2254,8 @@ export namespace Prisma {
     post_ower: string | null
     like_num: number | null
     post_owner: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type MPostMaxAggregateOutputType = {
@@ -2263,6 +2265,8 @@ export namespace Prisma {
     post_ower: string | null
     like_num: number | null
     post_owner: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type MPostCountAggregateOutputType = {
@@ -2270,8 +2274,11 @@ export namespace Prisma {
     url: number
     title: number
     post_ower: number
+    hashtage: number
     like_num: number
     post_owner: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -2293,6 +2300,8 @@ export namespace Prisma {
     post_ower?: true
     like_num?: true
     post_owner?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type MPostMaxAggregateInputType = {
@@ -2302,6 +2311,8 @@ export namespace Prisma {
     post_ower?: true
     like_num?: true
     post_owner?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type MPostCountAggregateInputType = {
@@ -2309,8 +2320,11 @@ export namespace Prisma {
     url?: true
     title?: true
     post_ower?: true
+    hashtage?: true
     like_num?: true
     post_owner?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -2405,8 +2419,11 @@ export namespace Prisma {
     url: string
     title: string | null
     post_ower: string
+    hashtage: JsonValue | null
     like_num: number
     post_owner: string
+    createdAt: Date
+    updatedAt: Date
     _count: MPostCountAggregateOutputType | null
     _avg: MPostAvgAggregateOutputType | null
     _sum: MPostSumAggregateOutputType | null
@@ -2433,8 +2450,11 @@ export namespace Prisma {
     url?: boolean
     title?: boolean
     post_ower?: boolean
+    hashtage?: boolean
     like_num?: boolean
     post_owner?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     mUser?: boolean | mUserDefaultArgs<ExtArgs>
     likes?: boolean | mPost$likesArgs<ExtArgs>
     _count?: boolean | MPostCountOutputTypeDefaultArgs<ExtArgs>
@@ -2445,8 +2465,11 @@ export namespace Prisma {
     url?: boolean
     title?: boolean
     post_ower?: boolean
+    hashtage?: boolean
     like_num?: boolean
     post_owner?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     mUser?: boolean | mUserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["mPost"]>
 
@@ -2455,8 +2478,11 @@ export namespace Prisma {
     url?: boolean
     title?: boolean
     post_ower?: boolean
+    hashtage?: boolean
     like_num?: boolean
     post_owner?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     mUser?: boolean | mUserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["mPost"]>
 
@@ -2465,11 +2491,14 @@ export namespace Prisma {
     url?: boolean
     title?: boolean
     post_ower?: boolean
+    hashtage?: boolean
     like_num?: boolean
     post_owner?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type mPostOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "url" | "title" | "post_ower" | "like_num" | "post_owner", ExtArgs["result"]["mPost"]>
+  export type mPostOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "url" | "title" | "post_ower" | "hashtage" | "like_num" | "post_owner" | "createdAt" | "updatedAt", ExtArgs["result"]["mPost"]>
   export type mPostInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     mUser?: boolean | mUserDefaultArgs<ExtArgs>
     likes?: boolean | mPost$likesArgs<ExtArgs>
@@ -2493,8 +2522,11 @@ export namespace Prisma {
       url: string
       title: string | null
       post_ower: string
+      hashtage: Prisma.JsonValue | null
       like_num: number
       post_owner: string
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["mPost"]>
     composites: {}
   }
@@ -2924,8 +2956,11 @@ export namespace Prisma {
     readonly url: FieldRef<"mPost", 'String'>
     readonly title: FieldRef<"mPost", 'String'>
     readonly post_ower: FieldRef<"mPost", 'String'>
+    readonly hashtage: FieldRef<"mPost", 'Json'>
     readonly like_num: FieldRef<"mPost", 'Int'>
     readonly post_owner: FieldRef<"mPost", 'String'>
+    readonly createdAt: FieldRef<"mPost", 'DateTime'>
+    readonly updatedAt: FieldRef<"mPost", 'DateTime'>
   }
     
 
@@ -4600,8 +4635,11 @@ export namespace Prisma {
     url: 'url',
     title: 'title',
     post_ower: 'post_ower',
+    hashtage: 'hashtage',
     like_num: 'like_num',
-    post_owner: 'post_owner'
+    post_owner: 'post_owner',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type MPostScalarFieldEnum = (typeof MPostScalarFieldEnum)[keyof typeof MPostScalarFieldEnum]
@@ -4632,6 +4670,14 @@ export namespace Prisma {
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
+  export const NullableJsonNullValueInput: {
+    DbNull: typeof DbNull,
+    JsonNull: typeof JsonNull
+  };
+
+  export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
+
+
   export const JsonNullValueInput: {
     JsonNull: typeof JsonNull
   };
@@ -4647,14 +4693,6 @@ export namespace Prisma {
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
 
 
-  export const NullsOrder: {
-    first: 'first',
-    last: 'last'
-  };
-
-  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
-
-
   export const JsonNullValueFilter: {
     DbNull: typeof DbNull,
     JsonNull: typeof JsonNull,
@@ -4662,6 +4700,14 @@ export namespace Prisma {
   };
 
   export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
+
+
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   /**
@@ -4811,8 +4857,11 @@ export namespace Prisma {
     url?: StringFilter<"mPost"> | string
     title?: StringNullableFilter<"mPost"> | string | null
     post_ower?: StringFilter<"mPost"> | string
+    hashtage?: JsonNullableFilter<"mPost">
     like_num?: IntFilter<"mPost"> | number
     post_owner?: StringFilter<"mPost"> | string
+    createdAt?: DateTimeFilter<"mPost"> | Date | string
+    updatedAt?: DateTimeFilter<"mPost"> | Date | string
     mUser?: XOR<MUserScalarRelationFilter, mUserWhereInput>
     likes?: TLikeListRelationFilter
   }
@@ -4822,8 +4871,11 @@ export namespace Prisma {
     url?: SortOrder
     title?: SortOrderInput | SortOrder
     post_ower?: SortOrder
+    hashtage?: SortOrderInput | SortOrder
     like_num?: SortOrder
     post_owner?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     mUser?: mUserOrderByWithRelationInput
     likes?: tLikeOrderByRelationAggregateInput
   }
@@ -4836,8 +4888,11 @@ export namespace Prisma {
     url?: StringFilter<"mPost"> | string
     title?: StringNullableFilter<"mPost"> | string | null
     post_ower?: StringFilter<"mPost"> | string
+    hashtage?: JsonNullableFilter<"mPost">
     like_num?: IntFilter<"mPost"> | number
     post_owner?: StringFilter<"mPost"> | string
+    createdAt?: DateTimeFilter<"mPost"> | Date | string
+    updatedAt?: DateTimeFilter<"mPost"> | Date | string
     mUser?: XOR<MUserScalarRelationFilter, mUserWhereInput>
     likes?: TLikeListRelationFilter
   }, "id" | "id">
@@ -4847,8 +4902,11 @@ export namespace Prisma {
     url?: SortOrder
     title?: SortOrderInput | SortOrder
     post_ower?: SortOrder
+    hashtage?: SortOrderInput | SortOrder
     like_num?: SortOrder
     post_owner?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: mPostCountOrderByAggregateInput
     _avg?: mPostAvgOrderByAggregateInput
     _max?: mPostMaxOrderByAggregateInput
@@ -4864,8 +4922,11 @@ export namespace Prisma {
     url?: StringWithAggregatesFilter<"mPost"> | string
     title?: StringNullableWithAggregatesFilter<"mPost"> | string | null
     post_ower?: StringWithAggregatesFilter<"mPost"> | string
+    hashtage?: JsonNullableWithAggregatesFilter<"mPost">
     like_num?: IntWithAggregatesFilter<"mPost"> | number
     post_owner?: StringWithAggregatesFilter<"mPost"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"mPost"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"mPost"> | Date | string
   }
 
   export type mUserWhereInput = {
@@ -5013,7 +5074,10 @@ export namespace Prisma {
     url: string
     title?: string | null
     post_ower: string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
     mUser: mUserCreateNestedOneWithoutUser_postInput
     likes?: tLikeCreateNestedManyWithoutPostInput
   }
@@ -5023,8 +5087,11 @@ export namespace Prisma {
     url: string
     title?: string | null
     post_ower: string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: number
     post_owner: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
     likes?: tLikeUncheckedCreateNestedManyWithoutPostInput
   }
 
@@ -5032,7 +5099,10 @@ export namespace Prisma {
     url?: StringFieldUpdateOperationsInput | string
     title?: NullableStringFieldUpdateOperationsInput | string | null
     post_ower?: StringFieldUpdateOperationsInput | string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     mUser?: mUserUpdateOneRequiredWithoutUser_postNestedInput
     likes?: tLikeUpdateManyWithoutPostNestedInput
   }
@@ -5042,8 +5112,11 @@ export namespace Prisma {
     url?: StringFieldUpdateOperationsInput | string
     title?: NullableStringFieldUpdateOperationsInput | string | null
     post_ower?: StringFieldUpdateOperationsInput | string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: IntFieldUpdateOperationsInput | number
     post_owner?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     likes?: tLikeUncheckedUpdateManyWithoutPostNestedInput
   }
 
@@ -5052,15 +5125,21 @@ export namespace Prisma {
     url: string
     title?: string | null
     post_ower: string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: number
     post_owner: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type mPostUpdateManyMutationInput = {
     url?: StringFieldUpdateOperationsInput | string
     title?: NullableStringFieldUpdateOperationsInput | string | null
     post_ower?: StringFieldUpdateOperationsInput | string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type mPostUncheckedUpdateManyInput = {
@@ -5068,8 +5147,11 @@ export namespace Prisma {
     url?: StringFieldUpdateOperationsInput | string
     title?: NullableStringFieldUpdateOperationsInput | string | null
     post_ower?: StringFieldUpdateOperationsInput | string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: IntFieldUpdateOperationsInput | number
     post_owner?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type mUserCreateInput = {
@@ -5326,6 +5408,29 @@ export namespace Prisma {
     mode?: QueryMode
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
+  export type JsonNullableFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonNullableFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonNullableFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
 
   export type TLikeListRelationFilter = {
     every?: tLikeWhereInput
@@ -5347,8 +5452,11 @@ export namespace Prisma {
     url?: SortOrder
     title?: SortOrder
     post_ower?: SortOrder
+    hashtage?: SortOrder
     like_num?: SortOrder
     post_owner?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type mPostAvgOrderByAggregateInput = {
@@ -5363,6 +5471,8 @@ export namespace Prisma {
     post_ower?: SortOrder
     like_num?: SortOrder
     post_owner?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type mPostMinOrderByAggregateInput = {
@@ -5372,6 +5482,8 @@ export namespace Prisma {
     post_ower?: SortOrder
     like_num?: SortOrder
     post_owner?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type mPostSumOrderByAggregateInput = {
@@ -5395,6 +5507,32 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+  export type JsonNullableWithAggregatesFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonNullableWithAggregatesFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedJsonNullableFilter<$PrismaModel>
+    _max?: NestedJsonNullableFilter<$PrismaModel>
   }
   export type JsonFilter<$PrismaModel = never> =
     | PatchUndefined<
@@ -5827,6 +5965,29 @@ export namespace Prisma {
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
+  export type NestedJsonNullableFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<NestedJsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>,
+        Required<NestedJsonNullableFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>
+
+  export type NestedJsonNullableFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
   export type NestedJsonFilter<$PrismaModel = never> =
     | PatchUndefined<
         Either<Required<NestedJsonFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>,
@@ -5890,7 +6051,10 @@ export namespace Prisma {
     url: string
     title?: string | null
     post_ower: string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
     mUser: mUserCreateNestedOneWithoutUser_postInput
   }
 
@@ -5899,8 +6063,11 @@ export namespace Prisma {
     url: string
     title?: string | null
     post_ower: string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: number
     post_owner: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type mPostCreateOrConnectWithoutLikesInput = {
@@ -5964,7 +6131,10 @@ export namespace Prisma {
     url?: StringFieldUpdateOperationsInput | string
     title?: NullableStringFieldUpdateOperationsInput | string | null
     post_ower?: StringFieldUpdateOperationsInput | string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     mUser?: mUserUpdateOneRequiredWithoutUser_postNestedInput
   }
 
@@ -5973,8 +6143,11 @@ export namespace Prisma {
     url?: StringFieldUpdateOperationsInput | string
     title?: NullableStringFieldUpdateOperationsInput | string | null
     post_ower?: StringFieldUpdateOperationsInput | string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: IntFieldUpdateOperationsInput | number
     post_owner?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type mUserCreateWithoutUser_postInput = {
@@ -6107,7 +6280,10 @@ export namespace Prisma {
     url: string
     title?: string | null
     post_ower: string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
     likes?: tLikeCreateNestedManyWithoutPostInput
   }
 
@@ -6116,7 +6292,10 @@ export namespace Prisma {
     url: string
     title?: string | null
     post_ower: string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
     likes?: tLikeUncheckedCreateNestedManyWithoutPostInput
   }
 
@@ -6177,8 +6356,11 @@ export namespace Prisma {
     url?: StringFilter<"mPost"> | string
     title?: StringNullableFilter<"mPost"> | string | null
     post_ower?: StringFilter<"mPost"> | string
+    hashtage?: JsonNullableFilter<"mPost">
     like_num?: IntFilter<"mPost"> | number
     post_owner?: StringFilter<"mPost"> | string
+    createdAt?: DateTimeFilter<"mPost"> | Date | string
+    updatedAt?: DateTimeFilter<"mPost"> | Date | string
   }
 
   export type tLikeUpsertWithWhereUniqueWithoutUserInput = {
@@ -6229,7 +6411,10 @@ export namespace Prisma {
     url: string
     title?: string | null
     post_ower: string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type tLikeCreateManyUserInput = {
@@ -6243,7 +6428,10 @@ export namespace Prisma {
     url?: StringFieldUpdateOperationsInput | string
     title?: NullableStringFieldUpdateOperationsInput | string | null
     post_ower?: StringFieldUpdateOperationsInput | string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     likes?: tLikeUpdateManyWithoutPostNestedInput
   }
 
@@ -6252,7 +6440,10 @@ export namespace Prisma {
     url?: StringFieldUpdateOperationsInput | string
     title?: NullableStringFieldUpdateOperationsInput | string | null
     post_ower?: StringFieldUpdateOperationsInput | string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     likes?: tLikeUncheckedUpdateManyWithoutPostNestedInput
   }
 
@@ -6261,7 +6452,10 @@ export namespace Prisma {
     url?: StringFieldUpdateOperationsInput | string
     title?: NullableStringFieldUpdateOperationsInput | string | null
     post_ower?: StringFieldUpdateOperationsInput | string
+    hashtage?: NullableJsonNullValueInput | InputJsonValue
     like_num?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type tLikeUpdateWithoutUserInput = {

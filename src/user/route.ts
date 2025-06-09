@@ -31,12 +31,12 @@ const router = Router();
 //  */
 
 router.post("/", (req, res) => {userController.createUser(req, res),console.log(req)});
-router.get("/:id",(req,res)=>{
-    userController.getOne(req,res),console.log('respone is :'),console.log(`${res.json}`)
-});
 router.get("/getDataTable",(req,res)=>{
     userController.getDataTable(req,res)
       
+});
+router.get("/:id",(req,res)=>{
+    userController.getOne(req,res),console.log('respone is :'),console.log(`${res.json}`)
 });
 router.post("/login",(req,res)=>{
     userController.login(req,res);

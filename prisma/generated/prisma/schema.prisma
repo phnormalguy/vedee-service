@@ -12,14 +12,17 @@ model tLike {
 }
 
 model mPost {
-  id         Int     @id @unique @default(autoincrement())
+  id         Int      @id @unique @default(autoincrement())
   url        String
   title      String?
   post_ower  String
-  like_num   Int     @default(0)
+  hashtage   Json?
+  like_num   Int      @default(0)
   post_owner String
-  mUser      mUser   @relation(fields: [post_owner], references: [id])
+  mUser      mUser    @relation(fields: [post_owner], references: [id])
   likes      tLike[]
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @default(now())
 }
 
 // This is your Prisma schema file,

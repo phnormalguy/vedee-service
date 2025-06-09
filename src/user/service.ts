@@ -40,6 +40,8 @@ class UserService {
             return ServiceHandler.SUCCESS(user.success,user.data,user.message)
             
         } catch (error) {
+            console.log(error)
+            
             return ServiceHandler.FAIL
             
         }

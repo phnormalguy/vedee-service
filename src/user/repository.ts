@@ -9,10 +9,11 @@ import { PaginatedData } from "../../utils/model/pagetinate_data";
 import { bcrptPassword } from "../../utils/helper/decode_password";
 import { generateToken } from "../../utils/helper/jwt-generate";
 
-export const userRepository = {
+export class UserRepository  {
+    constructor(private db: PrismaClient) {}
 
 
-    create: async (data: CUserBody): Promise<ServiceHandler> => {
+    async create (data: CUserBody): Promise<ServiceHandler>  {
 
         if (data) {
             const existUser = await db.mUser.findUnique({
@@ -47,8 +48,8 @@ export const userRepository = {
         }
         return { message: "body is required", success: false }
 
-    },
-    getOne: async (id: string): Promise<ServiceHandler> => {
+    };
+   async getOne (id: string): Promise<ServiceHandler>  {
         const user = await db.mUser.findUnique({
             where: {
                 id: id
@@ -59,9 +60,9 @@ export const userRepository = {
             return { message: "not found this user", success: false }
         }
         return { data: user }
-    },
+    };
 
-    update: async (data: UUserBody): Promise<ServiceHandler> => {
+    async update  (data: UUserBody): Promise<ServiceHandler>  {
         if (!data) {
             throw ServiceHandler.FAIL("body is required", 400)
         }
@@ -85,9 +86,10 @@ export const userRepository = {
             }
         })
         return { data: updateUser }
-    },
-
-    dataTable: async (page?: number, pageSize?: number): Promise<ServiceHandler> => {
+    };
+ 
+   async getDataTable  (page?: number, pageSize?: number): Promise<ServiceHandler> {
+        console.log('come here repo')
 
         const currentPage = Math.max(1, page || 1);
         const itemsPerPage = Math.max(1, pageSize || 10);
@@ -114,12 +116,12 @@ export const userRepository = {
             pageSize: itemsPerPage
         }
 
-        return pagetinatedData
+        return {data:pagetinatedData}
 
 
-    },
+    };
 
-    login:async (data : loginBody):Promise<ServiceHandler> => {
+    async login (data : loginBody):Promise<ServiceHandler> {
 
         if(!data) { 
            return { message: "body is required", success: false }
@@ -151,3 +153,5 @@ export const userRepository = {
 
 
 }
+ 
+export const userRepository = new UserRepository(db)

@@ -24,7 +24,6 @@ class UserController {
 
     async login(req:any,res:any){
         const result = await this.userService.login(req.body)
-
         return res.status(result.status_code || 200).json(result)
 
     }
