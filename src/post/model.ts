@@ -9,4 +9,4 @@ export const CreatePostSchma = z.object({
     
 })
 
-export type CreatePost = z.infer<typeof CreatePostSchma>
+export type CPostBody = z.infer<typeof CreatePostSchma>

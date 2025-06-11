@@ -1,11 +1,12 @@
 import { PrismaClient } from "@prisma/client";
-import { CreatePost } from "./model";
+import { CPostBody } from "./model";
 import { ServiceHandler } from "../../utils/service_response";
+import db from "../../db_instance";
 
 class PostRepository {
     constructor(private db:PrismaClient){}
 
-     async create(data: CreatePost): Promise<ServiceHandler> { 
+     async create(data: CPostBody): Promise<ServiceHandler> { 
             if (!data.url) {
                 return ServiceHandler.FAIL("Video URL is required to create a post.", 400); 
             }
@@ -26,3 +27,5 @@ class PostRepository {
       
     }
 }
+
+export const postRepository = new PostRepository(db)
